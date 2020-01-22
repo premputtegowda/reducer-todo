@@ -26,11 +26,13 @@ function App() {
     dispatch({type:'COMPLTE_TODO', payload: item.id})
     console.log('clicked item: ', item.id)
   }
-
+   const removeCompleted = () => {
+     dispatch({type:'REMOVE_COMPLETED'})
+   }
   return (
     <div className="App">
       <TodoForm todoText = {todoText} handleChanges = {handleChanges} handleSubmit={handleSubmit} />
-      <TodoList list = {state.todos} handleCompleted={handleCompleted}/>
+      <TodoList list = {state.todos} handleCompleted={handleCompleted} removeCompleted={removeCompleted}/>
 
     </div>
   );

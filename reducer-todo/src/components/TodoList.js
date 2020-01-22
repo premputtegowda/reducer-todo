@@ -9,7 +9,7 @@ const TodoList = (props) => {
             {props.list.map((todo,index) => (
                 <Todo key={index} todo = {todo} handleCompleted={ props.handleCompleted}/>
             ))}
-            
+            <button onClick={props.removeCompleted}>Clear Completed</button>
         </div>
         
     )
